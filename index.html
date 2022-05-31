@@ -5,14 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel ="stylesheet" href ="index.css"/>
-  <!--  <meta http-equiv="refresh" content="10;URL=page.html">  actualise la page/rafraichis --> 
+  <!--<meta http-equiv="refresh" content="10;URL=page.html">  actualise la page/rafraichis -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+    </style> 
 
     <title>Portfolio Enola</title>
+    
 </head>
 
 <body>
+   <!-- <?php header("location:index.php") ?> -->
+  <header> <!-- A deplacer dans header.php -->
+
+    <nav>
+        <ul>
+            <li> <!-- Accueil de la page -->
+                <a href="index.html"> Accueil </a>
+            </li>
+
+            <li> <!-- A propos de moi, competences, parcour.. langage utilisé ?  -->
+                <a href="index.html"> A propos </a>
+            </li>
+
+            <li> <!-- Lien vers le formulaire pour me contactez -->
+                <a href="index.html"> Me contacter </a> 
+            </li>
+        </ul>
+    </nav>
+  </header>
     <main>
-        <h1> Portfolio</h1>
+              <!-- Formulaire de contact -->
+      <div class="container">
+        
+        <h1>
+          Me contacter
+        </h1>
+
+        <form action="/action_page.php">
+
+          <label for="fname">
+            Nom & prénom
+          </label>
+          <input type="text" id="fname" name="firstname" placeholder="Votre nom et prénom">
+    
+          <label for="emailAddress">
+            Email
+          </label>
+          <input id="emailAddress" type="email" name="email" placeholder="Votre email">
+      
+          <label for="subject">
+            Message
+          </label>
+          <textarea id="subject" name="subject" placeholder="Votre message" style="height:120px">
+          </textarea>
+      
+          <input type="submit" value="Envoyer">
+
+        </form>
+      </div>
         
     </main>
 </body>
