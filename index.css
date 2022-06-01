@@ -4,6 +4,8 @@
     font-family: 'Cinzel', serif;
     font-size: 1rem;
     box-sizing: content-box;
+    justify-content: center;
+    align-items: center;
 }
 
 body{
@@ -13,7 +15,11 @@ body{
     overflow-x: hidden;
 }
 
-/*  barre de navigation */
+main{
+    
+}
+
+/********************  barre de navigation ******************/
 
 nav{
     position:sticky;
@@ -38,6 +44,12 @@ a{
     text-decoration: none;
     color:rgba(230, 237, 230, 0.96);
     align-items: center;
+    padding:1vh;
+}
+
+a:hover{
+    font-size:1.5rem ;
+    text-shadow: 2px 2px #f2f2f2;
 }
 
 /*****************grand titre h1 ******************/
@@ -128,7 +140,7 @@ a{
     }
     65.1% {
       opacity: 1;
-      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+      text-shadow: 0 0 30px rgb(249, 7, 7), 0 0 60px rgba(253, 6, 6, 0.886), 0 0 100px rgba(255, 255, 255, 0.1);
     }
     75% {
       opacity: 1;
@@ -221,7 +233,7 @@ a{
     }
     50% {
       opacity: 1;
-      text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+      text-shadow: 0 0 30px rgba(1, 91, 151, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
     }
     55% {
       opacity: 1;
@@ -299,14 +311,23 @@ a{
             font-size: 5rem;
             color:whitesmoke;
             box-shadow: #fbf9f9f9;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             font-family: 'Julius Sans One', sans-serif;
             position:relative;
-            top:-20vh;
+            top:-12vh;
             right:-55vh;
 }
 
-/* Formulaire */ 
+/* Image vectorielle */
+
+#japonais{
+    width: 15%;
+    filter: contrast(0.1);
+    float: right;
+    margin-top:-110px;
+}
+
+/******************* Formulaire ******************/ 
 
 input[type=text], textarea, input[type=email] {
     width: 100%;
@@ -344,7 +365,7 @@ input[type=text], textarea, input[type=email] {
     width: 100%;
     /* redéfinition 400 + 2*20 */
     max-width: 440px;
-    margin:0 auto;
+    margin:10vh 0 10vh 5vh;
   }
 
   h2{
@@ -355,22 +376,100 @@ input[type=text], textarea, input[type=email] {
     letter-spacing: 1px;
   }
 
-/*** Section 1 ***/
+/************************* Section 1 *************************/
 
-.section1{
-    width: 90%; 
+.section1{ 
+   
 }
 
-.cont-projet{
-   display: flex;
-   flex-wrap: wrap;
-  margin-left: 91px;
+.cont-projet{ 
+    position:relative;
+    left:15vh;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
 }
 
 .projet{
-    width:50vw;
-    margin-left:auto;
-    margin-right: auto;
-    filter: opacity(80%);
-    border: grey solid 1px;
+
+    width:30vw;
+    filter: opacity(83%);
+    border: grey solid 2px;
+    border-radius: 10px 10px 10px 10px;
 }
+
+/************************** Section 2 ***********************/
+
+ .section2{
+  position:relative;
+  bottom:105vh;
+ }
+
+ figure{
+    display: flex;
+    flex-flow: column;
+    max-width: 175px;
+
+ }
+ 
+ figcaption{
+     font-size: 1rem;
+     color:antiquewhite;
+     font-family: 'Cinzel', serif;
+     padding: 3px;
+     text-align: center;
+     margin:2vh;
+     letter-spacing: 1px;
+ }
+                                /*image icone*/
+.icone{
+    margin:auto;
+    width:70%;
+}
+
+.icone:hover{
+    width:75%;
+}
+
+
+ 
+/************************* Footer *************************/ 
+
+footer{
+    background: rgba(85, 85, 85, 0.8);
+    height: 16vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+
+.paragraphe{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left:5vw;
+}
+
+.line-separation{
+    background: white;
+    padding: 1px;
+    transform: rotate(89deg);
+    width: 108px;
+    position: relative;
+    left: 2vh;
+    top: -7vh;
+}
+
+/* Logo*/
+.logos{
+    margin:3vh;
+    display: flex;
+}
+
+.footer-logo {
+    margin:1vh;
+    width:8vh;
+}
+
