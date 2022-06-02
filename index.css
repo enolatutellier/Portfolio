@@ -9,7 +9,8 @@
 }
 
 body{
-    background:url(img/bg1.jpg);
+    background:url(img/3.jpg) ;
+    background-position: center;
     margin:auto;
     padding: auto;
     overflow-x: hidden;
