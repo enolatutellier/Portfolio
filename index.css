@@ -16,6 +16,10 @@ body{
     overflow-x: hidden;
 }
 
+header{
+  width:auto;
+}
+
 main{
     
 }
@@ -23,12 +27,11 @@ main{
 /********************  barre de navigation ******************/
 
 nav{
-    position:sticky;
+    position: fixed;
     width:fit-content;
     border: rgba(233, 251, 233, 0.246) solid 1px;
     border-radius: 20px 20px 20px 20px;
     margin:10px 0 0 10px;
-    position:sticky;
     background:rgba(255, 255, 255, 0.112);
 }
 
@@ -36,6 +39,11 @@ ul, li, a{
     display: flex;
     flex-direction: column;
     padding:8px;
+}
+
+ul{
+  width:20vw;
+  height: auto;
 }
 
 a{
@@ -307,15 +315,15 @@ a:hover{
   }
 
 .text-flicker-in-glow {
-	-webkit-animation: text-flicker-in-glow 4s linear both;
-	        animation: text-flicker-in-glow 4s linear both;
+	-webkit-animation: text-flicker-in-glow 4s linear infinite both;
+	        animation: text-flicker-in-glow 4s linear infinite both;
             font-size: 5rem;
             color:whitesmoke;
             box-shadow: #fbf9f9f9;
             letter-spacing: 3px;
             font-family: 'Julius Sans One', sans-serif;
             position:relative;
-            top:-12vh;
+            top:3vh;
             right:-55vh;
 }
 
@@ -325,57 +333,9 @@ a:hover{
     width: 15%;
     filter: contrast(0.1);
     float: right;
-    margin-top:-110px;
+    margin-top:200px;
 }
 
-/******************* Formulaire ******************/ 
-
-input[type=text], textarea, input[type=email] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-
-  label{
-    width: 100%;
-}
-  
-  input[type=submit] {
-    background-color: #000000f9;
-    color: rgb(179, 11, 11);
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #333533;
-  }
-  
-  .container {
-    box-sizing : border-box;
-    border-radius:5px;
-    background-color:#f2f2f2;
-    padding:20px;
-    width: 100%;
-    /* redéfinition 400 + 2*20 */
-    max-width: 440px;
-    margin:10vh 0 10vh 5vh;
-  }
-
-  h2{
-    color: #050401;
-    width: 100%;
-    font-size: 1.8rem;
-    text-align: center;
-    letter-spacing: 1px;
-  }
 
 /************************* Section 1 *************************/
 
@@ -390,29 +350,32 @@ input[type=text], textarea, input[type=email] {
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
+    top:19vh;
 }
 
 .projet{
-
     width:30vw;
     filter: opacity(83%);
     border: grey solid 2px;
     border-radius: 10px 10px 10px 10px;
+    margin:15px;
+    box-shadow: #ff000036 5px -2px 25px 0px;
 }
 
 /************************** Section 2 ***********************/
 
  .section2{
   position:relative;
-  bottom:105vh;
+  bottom:85vh;
+  z-index: 5;
  }
 
  figure{
     display: flex;
     flex-flow: column;
     max-width: 175px;
-
  }
+
  
  figcaption{
      font-size: 1rem;
@@ -420,19 +383,155 @@ input[type=text], textarea, input[type=email] {
      font-family: 'Cinzel', serif;
      padding: 3px;
      text-align: center;
-     margin:2vh;
+     margin:8px 0 8px 0;
      letter-spacing: 1px;
  }
-                                /*image icone*/
+
+                      /*image icone*/
 .icone{
     margin:auto;
     width:70%;
 }
 
 .icone:hover{
-    width:75%;
+    width:80%;
+}
+ /************************ Section 3 **************************/
+
+ .section3{
+  margin-top:-85vh;
+ }
+
+h3 { 
+  text-align: center;
+  font-size: 1.9rem;
+  color:#ffffff;
 }
 
+.title{
+  font-size: 1.4rem;
+}
+
+h3::first-letter{
+  font-size: 2.1rem;
+}
+
+.container3 {
+  width: 95%;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+p{
+  color:#d4d5d6;
+  font-size: 1rem;
+}
+
+.presentation {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  position: relative;
+  right:5vh;
+}
+
+.episode__number {
+  font-size: 8rem;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  height: calc(10vw + 20px);
+  transition: all 0.2s ease-in;
+}
+
+.episode__content {
+  border-top: 2px solid #fff;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 10px;
+  padding: 15px 0;
+}
+
+.episode__content .title {
+  font-weight: 600
+}
+
+.episode__content .story {
+  line-height: 26px;
+}
+
+@media (max-width: 600px) {
+  .episode__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .episode__content .story {
+    font-size: 15px;
+  }
+}
+
+/********************* Section 4 **********************/
+
+
+
+        /******** Formulaire ********/ 
+
+input[type=text], textarea, input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+label{
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: #000000f9;
+  color: rgb(179, 11, 11);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #333533;
+}
+
+.container {
+  box-sizing : border-box;
+  border-radius:5px;
+  background-color:#f2f2f2;
+  padding:20px;
+  width: 100%;
+  /* redéfinition 400 + 2*20 */
+  max-width: 440px;
+  margin:10vh 0 10vh 5vh;
+}
+
+h2{
+  color: #050401;
+  width: 100%;
+  font-size: 1.8rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/******************** Section 5 *******************/
+
+#horus{
+  width:25vh;
+  filter:grayscale(1);
+  position:absolute;
+}
 
  
 /************************* Footer *************************/ 
