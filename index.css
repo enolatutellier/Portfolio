@@ -31,8 +31,10 @@ nav{
     width:fit-content;
     border: rgba(233, 251, 233, 0.246) solid 1px;
     border-radius: 20px 20px 20px 20px;
-    margin:10px 0 0 10px;
+    margin:10px 0 10px 0;
     background:rgba(255, 255, 255, 0.112);
+    right:5vw;
+    z-index: 8;
 }
 
 ul, li, a{
@@ -321,7 +323,7 @@ a:hover{
             color:whitesmoke;
             box-shadow: #fbf9f9f9;
             letter-spacing: 3px;
-            font-family: 'Julius Sans One', sans-serif;
+            font-family: 'Playfair Display SC', serif;
             position:relative;
             top:3vh;
             right:-55vh;
@@ -394,15 +396,18 @@ a:hover{
 }
 
 .icone:hover{
-    width:80%;
+    width:88%;
 }
  /************************ Section 3 **************************/
 
  .section3{
-  margin-top:-85vh;
+  margin-top:  -71vh;
+  margin-left:-8vh;
  }
 
 h3 { 
+  animation: animated-text 3s steps(29,end) 1s 1 normal both;
+            animated-cursor 600ms steps(20,end) infinite;
   text-align: center;
   font-size: 1.9rem;
   color:#ffffff;
@@ -437,8 +442,7 @@ p{
 .episode__number {
   font-size: 8rem;
   font-weight: 600;
-  position: sticky;
-  top: 0;
+  height: 15px;
   text-align: center;
   height: calc(10vw + 20px);
   transition: all 0.2s ease-in;
@@ -491,6 +495,7 @@ input[type=text], textarea, input[type=email] {
 
 label{
   width: 100%;
+  font-weight:600;
 }
 
 input[type=submit] {
