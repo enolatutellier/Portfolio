@@ -55,12 +55,11 @@ a{
     text-decoration: none;
     color:rgba(230, 237, 230, 0.96);
     align-items: center;
-    padding:1vh;
 }
 
 a:hover{
     font-size:1.5rem ;
-    text-shadow: 2px 2px #f2f2f2;
+    text-shadow: 2px 2px 2px #f2f2f293;
 }
 
 /*****************grand titre h1 ******************/
@@ -345,6 +344,16 @@ a:hover{
    
 }
 
+.test{
+  background: white;
+}
+
+.test:hover{
+  display: inline;
+  background:wheat;
+
+}
+
 .cont-projet{ 
     position:relative;
     left:15vh;
@@ -361,7 +370,7 @@ a:hover{
     border: grey solid 2px;
     border-radius: 10px 10px 10px 10px;
     margin:15px;
-    box-shadow: #ff000036 5px -2px 25px 0px;
+    box-shadow: #050401 16px 20px 25px 0px;
 }
 
 /************************** Section 2 ***********************/
