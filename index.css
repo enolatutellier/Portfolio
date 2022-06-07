@@ -27,40 +27,140 @@ main{
 
 /********************  barre de navigation ******************/
 
-nav{
-    position: fixed;
-    width:fit-content;
-    border: rgba(233, 251, 233, 0.246) solid 1px;
-    border-radius: 20px 20px 20px 20px;
-    margin:10px 0 10px 0;
-    background:rgba(255, 255, 255, 0.112);
-    right:5vw;
-    z-index: 8;
+.container1 {
+  min-height: 14vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  background: #5b595978;
+  font-family:'Cinzel', sans-serif;
 }
 
-ul, li, a{
-    display: flex;
-    flex-direction: column;
-    padding:8px;
+h1 a {
+font-size: 80px;
+color: #b7b7b7;
+text-decoration: none;
+text-transform: uppercase;
+margin-top:10vh;
 }
 
-ul{
-  width:20vw;
-  height: auto;
+.popover {
+ display: none;
+ box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
 }
 
-a{
-    font-size: 1.2rem;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color:rgba(230, 237, 230, 0.96);
-    align-items: center;
+.popover:target {
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-a:hover{
-    font-size:1.5rem ;
-    text-shadow: 2px 2px 2px #f2f2f293;
+.popover .content {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 0;
+height: 0;
+color: #fff;
+background-color: #191919;
+animation: 1s grow ease forwards;
+text-align: center;
+z-index: 2;
+position:fixed;
+}
+
+.content{
+  height: 10vh;
+  margin:-10vh;
+}
+
+.nav_list  {
+list-style-type: none;
+}
+
+.nav_list a {
+text-decoration: none;
+font-size: 50px;
+color: #fff;
+}
+
+.nav_list_item {
+height: 100%;
+overflow: hidden;
+}
+
+.nav_list li {
+padding: 15px 0;
+text-transform: uppercase;
+transform: translateY(200px);
+opacity: 0;
+animation: 2s slideUp ease forwards .5s;
+position: relative;
+}
+
+.nav_list li::before {
+content: '';
+position: absolute;
+height: 2px;
+width: 0px;
+left: 0;
+bottom: 10px;
+background: #6c1f1f; 
+transition: all .5s ease;
+}
+
+.nav_list li:hover:before {
+    width: 100%;
+}
+
+.popover p {
+padding: 50px;
+opacity: 0;
+animation: 1s fadeIn ease forwards 1s;
+}
+
+.popover .close::after {
+right: 0;
+top: 0;
+width: 50px;
+height: 50px;
+position: absolute;
+display: flex;
+z-index: 1;
+font-size: 30px;
+align-items: center;
+justify-content: center;
+background-color: #b8b8b8;
+color: #fff;
+content: "×";
+cursor: pointer;
+opacity: 0; 
+animation: 1s fadeIn ease forwards .5s;
+}
+
+@keyframes grow {
+100% {
+  height: 90%;
+  width: 90%;
+}
+}
+
+@keyframes fadeIn {
+100% {
+opacity: 1;
+}
+}
+
+@keyframes slideUp {
+100% {
+  transform: translateY(0);
+  opacity: 1;
+}
 }
 
 /*****************grand titre h1 ******************/
@@ -323,10 +423,7 @@ a:hover{
             color:whitesmoke;
             box-shadow: #fbf9f9f9;
             letter-spacing: 3px;
-            font-family: 'Playfair Display SC', serif;
-            position:relative;
-            top:3vh;
-            left:55vh;
+            font-family: 'Cinzel', serif;
 }
 
 /* Image vectorielle Japon */
@@ -357,6 +454,8 @@ a:hover{
 .projet{
   border: rgba(138, 135, 135, 0.631) solid 1px;
   border-radius: 10px 10px 10px 10px;
+  max-width:100%;
+  min-height:100% ;
 } 
 
 .projet:hover{
@@ -459,8 +558,8 @@ h2{
 
  
  .section3{
-  margin-top:  -45vh;
-  margin-left:-8vh;
+  margin-top:  -68vh;
+  margin-left: -18vh;
  }
 
 h3 { 
@@ -476,7 +575,8 @@ h3::first-letter{
 }
 
 .title{
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  color:whitesmoke;
 }
 
 
@@ -486,9 +586,11 @@ h3::first-letter{
   margin: 0 auto;
 }
 
-p{
+.para1{
   color:#d4d5d6;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight:500;
+  padding: 50px;
 }
 
 .presentation {
@@ -588,13 +690,22 @@ input[type=submit]:hover {
   letter-spacing: 1px;
 }
 
+.deco{
+background:url(img/pierre.jpg) no repeat;
+width:15vh;
+}
+
 /******************** Section 5 *******************/
 
 #horus{
-  width:21vh;
+  width:10vh;
   filter:grayscale(1);
   position:absolute;
+  right:69vh;
+  top:376vh;
 }
+
+
 
  
 /************************* Footer *************************/ 
@@ -612,7 +723,13 @@ footer{
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin-left:5vw;
+    margin-left:-3vw;
+}
+
+.para{
+  margin:15px 0 10px 0;
+  text-decoration: none;
+  color:whitesmoke;
 }
 
 .line-separation{
@@ -633,5 +750,5 @@ footer{
 
 .footer-logo {
     margin:1vh;
-    width:8vh;
+    width:6vh;
 }
