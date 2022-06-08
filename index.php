@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link  rel ="stylesheet" href ="index.css"/>
-  <!--<meta http-equiv="refresh" content="10;URL=page.html">  actualise la page/rafraichis -->
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
     </style>
@@ -18,73 +17,57 @@
 </head>
 
 <body>
-   <!-- <?php header("location:index.php") ?> -->
-  <header> <!-- A deplacer dans header.php -->
+  <header class="header"> <!-- A deplacer dans header.php -->
 
-    <div class="container1">
-      <h1 class="text-flicker-in-glow">
-         <a href="#menu" class="text-flicker-in-glow">Click me</a>
-      </h1>
-         
-     <div class="popover" id="menu">
-      <div class = 'content'>
-       <a href="#" class="close"></a>
-        <div class = 'nav'>
-         <ul class = 'nav_list'>
-           
-           <div class = 'nav_list_item'>
-         <li>
-           <a href="#">
-             Accueil
-            </a>
-          </li>
-           </div>
+    <!--The trick is create a checkbox with a label, add display:none property to checkbox and modify styles with the pseudoclass :checked-->
+      <input type="checkbox" name="Menu" id="menu-button-check">
+      <label for="menu-button-check">≡</label>
+      <div class="menu">
+          <ul>
+              <li>
+                <a href="#">
+                  Accueil
+                </a>
+              </li>
 
-          <div class = 'nav_list_item'>
-         <li>
-           <a href="#">
-             Projet
-            </a>
-          </li>
-           </div>
+              <li>
+                <a href="#">
+                  Projets
+                </a>
+              </li>
 
-         <div class = 'nav_list_item'>
-         <li>
-           <a href="#">
-             Parcours
-            </a>
-          </li>
-           </div>
+              <li>
+                <a href="#">
+                  Parcours
+                </a>
+              </li>
 
-         <div class = 'nav_list_item'>
-         <li>
-           <a href="#">
-             Mon CV
-            </a>
-          </li>
-           </div>
+              <li>
+                <a href="#">
+                  Mon CV
+                </a>
+              </li>
 
-          <div class = 'nav_list_item'>
-         <li>
-           <a href="#contact">
-             Contactez-moi
-            </a>
-          </li>
-           </div>
-           
-       </ul>
-       </div>
+              <li>
+                <a href="#">
+                  Contactez-moi
+                </a>
+              </li>
+          </ul>
       </div>
-      </div>
-      </div>
-
   </header>
 
     <main>
-        <img src="img/japonais.png" alt="lettre japonaise" id="japonais" >
+
+      
 <!------------------- Première SECTION -------------------->
       <section class="section1">
-
+ <img src="img/japonais.png" alt="lettre japonaise" id="japonais" >
+        <h1 class="home-title">
+          <span>Developpeuse Web</span>
+          <span>Enola Tutellier</span>
+        </h1>
+        
       <div class="cont-projet">
 
         <div class="flip-box">
@@ -96,7 +79,7 @@
               <h2> Jadoo </h2>
               <br>
               <p>Premier projet réalisé en autonomie,
-                apprentissage des langage html et css.
+                apprentissage des langages html et css.
               </p>
             </div>
           </div>
@@ -150,19 +133,29 @@
         <figure>
           <img src="img/logo/github.png" alt="Icône Github" class="icone">         
           <figcaption> GitHub </figcaption>
+          </figure>
 
+          <figure>
           <img src="img/logo/html.png" alt="Icône HTML5" class="icone">
           <figcaption>HTML5</figcaption>
+          </figure>
 
+          <figure>
           <img src="img/logo/css-3.png" alt="Icône CSS3"class="icone">
           <figcaption> CSS3 </figcaption>
+          </figure>
 
-          <img src="img/logo/icone-wordpress.png" alt="Icône Wordpress" class="icone">
+          <figure>
+            <img src="img/logo/icone-wordpress.png" alt="Icône Wordpress" class="icone">
           <figcaption> Wordpress</figcaption>
-
+          </figure>
+          
+          <figure>
           <img src="img/logo/fichier-php.png" alt="Icône PHP" class="icone">
           <figcaption> PHP</figcaption>
+          </figure>
 
+          <figure>
           <img src="img/logo/mysql.png" alt="Icône Mysql" class="icone">
           <figcaption> MySQL</figcaption>
         </figure>
@@ -206,15 +199,6 @@
             </div>
           </article>
           
-          <article class="presentation">
-            <div class="episode__number"></div>
-            <div class="episode__content">
-              <div class="title">Parcours</div>
-              <div class="story">
-                <p>   </p>
-              </div>
-            </div>
-          </article>
         </div>
           <h3 class="center">
       </section>
@@ -230,14 +214,15 @@
           <!-- Formulaire de contact -->
 
         <?php 
-          include("recupform.php"); 
-        ?>
+         // include("recupform.php"); 
+        ?> 
+
         <form method="POST" action="recupform.php">
 
           <label for="fname">
             Nom & prénom
           </label>
-          <input type="text" id="fname" name="Nom&Prenom" placeholder="Votre nom et prénom">
+          <input type="text" id="fname" name="Nom" placeholder="Votre nom et prénom">
     
           <label for="emailAddress">
             Email
@@ -253,10 +238,11 @@
           <input type="submit" value="Envoyer">
 
         </form>
+
       </div>
 
         <div class="deco">
-          
+
         </div>
     </section>
 
@@ -274,7 +260,7 @@
           <a href="#" class="para">
             Me rejoindre sur les réseau ! 
           </a>
-          <a href="#" class="para">
+          <a href="mentions.html" class="para">
             Mentions légales
           </a>
         </div>
@@ -282,14 +268,14 @@
       <div class="line-separation"></div>
 
           <div class="copyright">
-            <p class="text-flicker">
-              © Copyright ?  
+            <p class="text">
+              © Copyright tout droits reservés 
             </p>
           </div>
 
           <div class="logos">
 
-            <a href="#">
+            <a href="https://github.com/enolatutellier/enolatutellier">
               <img src="img/logo/github.png" alt="Logo snapchat" class="footer-logo">
             </a>
              <a href="#">
