@@ -1,42 +1,43 @@
 <?php
-    $serveur = "localhost";
-    $dbname = "portfolio";
-    $user = "root";
-    $pass = "root";
+
+require_once("connexion.php");
+
+
+    function valid_donnees($donnees){
+        $donnees = trim($donnees);
+        $donnees = stripslashes($donnees);
+        $donnees = htmlspecialchars($donnees);
+        return $donnees;
+    }
+
+    $Nom = valid_donnees($_POST["Nom"]);
+    $Mail = valid_donnees($_POST["Mail"]);
+    $Message = valid_donnees($_POST["Message"]);
     
     try{
         //On se connecte à la BDD
-        $dbco = new PDO("mysql:host=$serveur;dbname=$dbname; charset=utf8",$user,$pass);
+        $dbco = new PDO("mysql:host=$servername;dbname=$database; charset=utf8",$username,$mdp);
         $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //On insère les données reçues
         $sth = $dbco->prepare("
-            INSERT INTO messages(Nom&Prenom,Mail,Message)
-            VALUES(:Nom&Prenom,:Mail,:Message)");
-        $sth->bindParam(':Nom&Prenom',$_POST['nom']);
-        $sth->bindParam(':Mail',$_POST['mail']);
-        $sth->bindParam(':Message',$_POST['message']);
+            INSERT INTO formulaire(Nom,Mail,Message)
+            VALUES(:Nom,:Mail,:Message)");
+        $sth->bindParam(':Nom',$Nom);
+        $sth->bindParam(':Mail',$Mail);
+        $sth->bindParam(':Message',$Message);
         $sth->execute();
 
-        function valid_donnees($donnees){
-            $donnees = trim($donnees);
-            $donnees = stripslashes($donnees);
-            $donnees = htmlspecialchars($donnees);
-            return $donnees;
-        $nom = valid_donnees($_POST["nom"]);
-        $email = valid_donnees($_POST["email"]);
-        $message = valid_donnees($_POST["message"]);
-       
-    
-    }?>
-    
-    <script type="text/javascript">
-    alert("Votre message à bien été envoyé");
-    window.location.href="index.php";
-    </script>
-       
-     <?php
+        ?>
+        <script type="text/javascript">
+            alert("Votre message à bien été envoyé");
+            window.location.href="index.php";
+        </script>
+        <?php
     }
+    
     catch(PDOException $e){
+        echo '001';
         echo 'Impossible de traiter les données. Erreur : '.$e->getMessage();
     }
+
 ?>
