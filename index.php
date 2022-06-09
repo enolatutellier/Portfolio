@@ -213,9 +213,6 @@
           <br>
           <!-- Formulaire de contact -->
 
-        <?php 
-         // include("recupform.php"); 
-        ?> 
 
         <form method="POST" action="recupform.php">
 

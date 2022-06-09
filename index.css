@@ -274,10 +274,9 @@ span{
 }
 
 .cont-projet{ 
-  margin-left: 20vh;
+  margin-left: 3vh;
   margin-right: auto;
   flex-direction: column;
- width:fit-content;
 }
 
 
@@ -390,12 +389,9 @@ h2{
  .section3{
   margin-right: 60vh;
   margin-top:112px;
-
  }
 
 h3 { 
-  animation: animated-text 3s steps(29,end) 1s 1 normal both;
-            animated-cursor 600ms steps(20,end) infinite;
   text-align: center;
   font-size: 1.9rem;
   color:#ffffff;
