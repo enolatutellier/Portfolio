@@ -1,6 +1,6 @@
 <?php
 
-require_once("connexion.php");
+require_once("connexion_bdd.php");
 
 
     function valid_donnees($donnees){

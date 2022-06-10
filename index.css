@@ -53,7 +53,6 @@ label[for=menu-button-check]:nth-of-type(1) {
   font-size: inherit;
   color: inherit;
   text-decoration: none;
-  margin:0 3vh 0 3vh;
 }
 
 @media (min-width: 768px) {
@@ -205,6 +204,8 @@ label[for=menu-button-check]:nth-of-type(1) {
   flex-wrap: wrap;
   background-color: #8484847c;
   z-index: 0;
+  margin-left:16vh;
+  border-radius: 10px 10px 10px 10px;
 
 }
 
@@ -231,7 +232,6 @@ label[for=menu-button-check]:nth-of-type(1) {
   left: 25px;
   width: 400px;
   height: 400px;
-  background: rgba(107, 107, 104, 0.274);
   z-index: 1;
 }
 
@@ -246,6 +246,7 @@ label[for=menu-button-check]:nth-of-type(1) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px 15px;
 }
 
 .container .card .contentBx {
@@ -272,7 +273,8 @@ label[for=menu-button-check]:nth-of-type(1) {
   bottom: -50px;
   left: 0;
   right: 0;
-  background: #000;
+  background: rgba(8, 8, 8, 0.883);
+  border-radius: 10px 10px 10px 10px;
   z-index: -1;
 }
 
@@ -289,7 +291,7 @@ label[for=menu-button-check]:nth-of-type(1) {
 .container .card .contentBx a {
   display: inline-block;
   margin-top: 15px;
-  color: rgba(150, 150, 150, 0.407);
+  color: rgb(255 0 0 / 70%);
   text-decoration: none;
   padding: 10px;
   border: 1px solid rgba(106, 101, 101, 0.495);
@@ -448,8 +450,7 @@ label[for=menu-button-check]:nth-of-type(1) {
    justify-content: center;
    width: 100%;
    height: 500px;
-   border: red solid 1px;
-   margin-top:8vw;
+   margin-top:18vw;
  }
 
  .left {
@@ -498,6 +499,8 @@ label[for=menu-button-check]:nth-of-type(1) {
   background: #E9E2D0;
   box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
   z-index: 5;
+  left:45vh;
+  border-radius: 5px 5px 5px 5px;
 }
 
 #card img {

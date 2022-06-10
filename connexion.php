@@ -1,21 +1,72 @@
-<?php
-// cette page crée la connexion à la base de donnee
-$servername = "localhost";
-$database = "portfolio";      // !!!!!!!!!! entrée le nom de la bdd
-$username = "root";
-$mdp = "root";
+<!DOCTYPE html>
+<html lang="fr">
 
-//on essaie la connexion avec try 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel ="stylesheet" href ="connexionphp.css"/>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+    </style>
+    <title>Connexion Admin</title>
+</head>
+    <body>
+    <h1> Formulaire de Connexion </h1>
+<div id="login">
 
-try{
-    $db = new PDO("mysql:host=$servername;dbname=$database;charset=utf8",$username,$mdp);
-    $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-}
+    <form name='form-login'>
+        <span class="fontawesome-user">
+        </span>
+        <input type="text" id="user" placeholder="user">
 
-/* on stock l'erreur dans la variable $e, pdo exeption recuepre l'erreur pour l'afficher c'est une condition
-        catch s'operera si try n'a pas fonctionner comme il 
-faut et affichera l'erreur en l'affichant avec echo puis concatene avec le . (point) */ 
+        <span class="fontawesome-lock"></span>
+        <input type="password" id="pass" placeholder="pass">
 
-catch(PDOException $e){ 
-    echo "Erreur de connexion :" . $e->getMessage();
-}
+        <input type="submit" value="Connexion">
+    </form>
+</div>
+
+    <footer>
+        <div class="paragraphe"> 
+          <a href="index.php" class="para">
+           Accueil
+          </a>
+          <a href="#" class="para">
+            Me rejoindre sur les réseau ! 
+          </a>
+          <a href="mentions.html" class="para">
+            Mentions légales
+          </a>
+        </div>
+
+      <div class="line-separation"></div>
+
+          <div class="copyright">
+            <p class="text">
+              © Copyright tout droits reservés 
+            </p>
+          </div>
+
+          <div class="logos">
+
+            <a href="https://github.com/enolatutellier/enolatutellier">
+              <img src="img/logo/github.png" alt="Logo snapchat" class="footer-logo">
+            </a>
+             <a href="#">
+               <img src="img/logo/instagram.png" alt="Logo instagram" class="footer-logo">
+              </a>
+              <a href="#">
+                <img src="img/logo/linkedin.png" alt="Logo linkedin" class="footer-logo">
+              </a>
+
+              <a href="#">
+                <img src="img/logo/twitter.png" alt="Logo linkedin" class="footer-logo">
+              </a>
+
+          </div>
+      </div>
+    </footer>
+    </body>
+
+</html>

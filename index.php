@@ -44,15 +44,16 @@
 
               <li>
                 <a href="#">
-                  Mon CV
+                  Contactez-moi
                 </a>
               </li>
 
               <li>
-                <a href="#">
-                  Contactez-moi
+                <a href="connexion.php">
+                  Connexion Admin
                 </a>
               </li>
+              
           </ul>
       </div>
   </header>
