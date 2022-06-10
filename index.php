@@ -62,151 +62,128 @@
       
 <!------------------- Première SECTION -------------------->
       <section class="section1">
- <img src="img/japonais.png" alt="lettre japonaise" id="japonais" >
-        <h1 class="home-title">
-          <span>Developpeuse Web</span>
-          <span>Enola Tutellier</span>
-        </h1>
+ <img src="img/japonais.png" alt="lettre japonaise" id="japonais">
+
         
-      <div class="cont-projet">
-
-        <div class="flip-box">
-          <div class="flip-box-inner">
-            <div class="flip-box-front">
-              <img src="img/jadoo.PNG" alt="p1" class="projet">
-            </div>
-            <div class="flip-box-back">
-              <h2> Jadoo </h2>
-              <br>
-              <p>Premier projet réalisé en autonomie,
-                apprentissage des langages html et css.
-              </p>
-            </div>
-          </div>
-        </div>
-  <br><br>
-
-        <div class="flip-box">
-          <div class="flip-box-inner">
-            <div class="flip-box-front">
-              <img src="img/eno&lo.PNG" alt="P2" class="projet" >
-            </div>
-            <div class="flip-box-back">
-              <h2> Agence de voyage </h2>
-              <br>
-              <p class="p1"> Création d'un site d'agence de voyage
-                , promouvoir les voyages avec photo, prix, nombre de personne
-                il doit contenir plusieurs catégories de voyage(croisière,
-                hôtel, visite guidés..) 
-                <BR>
-                  Projet réaliser en duo avec <a href="https://github.com/LoloxDev"> Lorris </a>
-              </p>
-            </div>
-          </div>
-        </div>
- <br> <br>
- 
-          <div class="flip-box">
-            <div class="flip-box-inner">
-              <div class="flip-box-front">
-                <img src="img/barber.PNG" alt="Projet 3" class="projet" >
-              </div>
-              <div class="flip-box-back">
-                <h2> Barber </h2>
-                <br>
-              <p class="p1"> Troisième projet, projet catalogue. Choix du thème 
-                  libre. Le choix était de crée un Barber avec un catalogue 
-                et des prestations. 
-              <br>
-                Projet réaliser en duo avec <a href="https://github.com/sgonzalez58"> Sergio </a> 
-              </p>
-              </div>
-            </div>
-          </div> 
-
+        <div class="container">
+  <div class="card">
+    <div class="imgBx">
+    <img src="img/jadoo.PNG" alt="p1" class="projet jadoo">
+    </div>
+    <div class="contentBx">
+      <div class="content">
+        <h2>Projet Jadoo</h2>
+        <p> 
+          Projet réaliser en autonomie, apprentissage surtout
+          du langage html. 
+        </p>
+        <a href="https://github.com/enolatutellier/"> Mon GitHub </a>
       </div>
-     
+    </div>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <div class="imgBx">
+    <img src="img/eno&lo.PNG" alt="P2" class="projet" >
+    </div>
+    <div class="contentBx">
+      <div class="content">
+        <h2>Agence de Voyage</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam culpa sunt voluptates quam, sed quod earum et alias expedita distinctio ad nam fugiat veritatis a.</p>
+        <a href="https://github.com/LoloxDev"> Lorris </a>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <div class="card">
+    <div class="imgBx">
+    <img src="img/barber.PNG" alt="Projet 3" class="projet" >
+    </div>
+    <div class="contentBx">
+      <div class="content">
+        <h2>Catalogue Barber </h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+          Ullam culpa sunt voluptates quam, sed quod earum et alias expedita distinctio ad nam fugiat veritatis a.</p>
+          <a href="https://github.com/sgonzalez58"> Sergio </a>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <div class="imgBx">
+      <img src="img/projet.jpg" alt="">
+    </div>
+    <div class="contentBx">
+      <div class="content">
+        <h2>Projet</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam culpa sunt voluptates quam, sed quod earum et alias expedita distinctio ad nam fugiat veritatis a.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
       </section>
 
 <!-------------------- Deuxième SECTION --------------------->
-      <section class="section2">
-        <figure>
-          <img src="img/logo/github.png" alt="Icône Github" class="icone">         
-          <figcaption> GitHub </figcaption>
-          </figure>
+<section id="slideshow">
+          <div class="entire-content">
+            <div class="content-carrousel">
+              
+              <figure>
+                <img src="img/logo/github.png" alt="Icône Github" class="shadow">         
+              </figure>
+      
+              <figure>
+                <img src="img/logo/html.png" alt="Icône HTML5" class="shadow">
+              </figure>
+      
+              <figure>
+                <img src="img/logo/css-3.png" alt="Icône CSS3"class="shadow">
+              </figure>
+      
+              <figure>
+                <img src="img/logo/icone-wordpress.png" alt="Icône Wordpress" class="shadow">
+              </figure>
+                
+              <figure>
+                <img src="img/logo/fichier-php.png" alt="Icône PHP" class="shadow">
+              </figure>
+      
+              <figure>
+                <img src="img/logo/mysql.png" alt="Icône Mysql" class="shadow">
+              </figure>
+        </div>
+      </div>
 
-          <figure>
-          <img src="img/logo/html.png" alt="Icône HTML5" class="icone">
-          <figcaption>HTML5</figcaption>
-          </figure>
 
-          <figure>
-          <img src="img/logo/css-3.png" alt="Icône CSS3"class="icone">
-          <figcaption> CSS3 </figcaption>
-          </figure>
-
-          <figure>
-            <img src="img/logo/icone-wordpress.png" alt="Icône Wordpress" class="icone">
-          <figcaption> Wordpress</figcaption>
-          </figure>
-          
-          <figure>
-          <img src="img/logo/fichier-php.png" alt="Icône PHP" class="icone">
-          <figcaption> PHP</figcaption>
-          </figure>
-
-          <figure>
-          <img src="img/logo/mysql.png" alt="Icône Mysql" class="icone">
-          <figcaption> MySQL</figcaption>
-        </figure>
-      </section>
-
+    </section>
 <!------------- Toisième SECTION --------------->
       <section class="section3">
-        <div class="container3">
 
-          <h3>Présentation</h3>
-          
-          <article class="presentation">
-            <div class="episode__number"></div>
-            <div class="episode__content">
-              <div class="title">Mon Nom/Prénom </div>
-              <div class="story">
-                <p class="para1">Enola Tutellier </p>
-
-              </div>
-            </div>
-          </article>
-          
-          <article class="presentation">
-            <div class="episode__number"></div>
-            <div class="episode__content">
-              <div class="title">Adresses</div>
-              <div class="story">
-                <p class="para1"> 2 rue de la barre, 58000 Nevers. </p>
-              </div>
-            </div>
-          </article>
-          
-          <article class="presentation">
-            <div class="episode__number"></div>
-            <div class="episode__content">
-              <div class="title">Téléphone / Mail </div>
-              <div class="story">
-                <p  class="para1"> 06.48.59.54.68 </p>
-                <p  class="para1">enola.tutellier@hotmail.com</p>
-              </div>
-            </div>
-          </article>
-          
-        </div>
-          <h3 class="center">
-      </section>
+     <div class="gradient"></div>
+  <div id="card">
+    <img src="photomoi" alt="photo"/>
+    <h2>Enola Tutellier</h2>
+    <p>En formation depuis 07/03/2022 à OnlineForma Pro</p>
+    <p>Passionnée de nouvelle technologie quelquel soit le support
+      , je souhaitais me convertir vers un metier qui me ressemblais plus .</p>
+    <span class="left bottom">tel: 06 48 59</span>
+    <span class="right bottom">adress:Nevers 58 000</span>
+</div> 
+</section>
 
 <!------------------ Quatrième SECTION ----------------------->
     <section class="section4">
               
-      <div class="container" id="contact">
+      <div class="container_form" id="contact">
         <h2 class="titre-form">
           Me contacter
         </h2>
@@ -233,16 +210,15 @@
           </textarea>
       
           <input type="submit" value="Envoyer">
-
         </form>
-
       </div>
 
-        <div class="deco">
+      <div class="yinyang"></div>
 
-        </div>
     </section>
 
+ 
+<!----------- CNIQUIEME Section -------------------->
     <section class="section5">
       <img src="img/eyehorus.png" alt="oeil d'horus" id="horus">
     </section>
