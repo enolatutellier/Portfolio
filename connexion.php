@@ -1,3 +1,26 @@
+<?php 
+// ouvertur de la session
+session_start();
+if(isset($_SESSION['connexion']))
+{
+   header('Location:compte.php');
+}
+if(!empty($_POST['mail']))
+{
+   $pseudo = $_POST['mail'];
+   $_SESSION['connexion'];
+}
+
+//date dexpiration du cookie
+if(!empty($_POST['mail']))
+{
+   $mail = $_POST['mail'];
+   setcookie('mail', $mail, time()+ 365*24*4000);
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,7 +41,7 @@
     <form name='form-login'>
         <span class="fontawesome-user">
         </span>
-        <input type="text" id="user" placeholder="user">
+        <input type="text" id="user" placeholder="user"  pattern="*{1.}[@][a-zA-Z]{2,}\.[a-zA-Z]{2,}" min="7" max="30">
 
         <span class="fontawesome-lock"></span>
         <input type="password" id="pass" placeholder="pass">
