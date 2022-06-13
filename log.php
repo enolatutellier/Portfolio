@@ -1,24 +1,22 @@
-<?php 
-// ouvertur de la session
+<?php //page de connexion administrateur 
 session_start();
-if(isset($_SESSION['connexion']))
-{
-   header('Location:compte.php');
-}
-if(!empty($_POST['mail']))
-{
-   $pseudo = $_POST['mail'];
-   $_SESSION['connexion'];
-}
+if (isset($_POST['Connexion'])){
+    if(!empty($_POST['mail']) AND !empty($_POST['mdp'])){
+        $mail_par_defaut = "enola.tutellier@hotmail.com";
+        $mdp_par_defaut = "root1234";
 
-//date dexpiration du cookie
-if(!empty($_POST['mail']))
-{
-   $mail = $_POST['mail'];
-   setcookie('mail', $mail, time()+ 365*24*4000);
+        $mail_saisi = htmlspecialchars($_POST['mail']);
+        $mdp_saisi = htmlspecialchars($_POST['mdp']);
+
+        if($mail_saisi == $mail_par_defaut AND $mdp_saisi == $mdp_par_defaut){
+            $_SESSION['mdp'] = $mdp_saisi;
+            header('Location: index.php');            
+        } else{
+            echo" mail ou mot de passe incorrect"; 
+        }
+    }
 }
 ?>
-
 
 
 <!DOCTYPE html>
@@ -28,7 +26,7 @@ if(!empty($_POST['mail']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  rel ="stylesheet" href ="connexionphp.css"/>
+    <link  rel ="stylesheet" href ="logphp.css"/>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
     </style>
@@ -36,6 +34,8 @@ if(!empty($_POST['mail']))
 </head>
     <body>
     <h1> Formulaire de Connexion </h1>
+
+    <!-- ajouter une fleche/ retour au site --> 
 <div id="login">
 
     <form name='form-login'>
@@ -56,7 +56,7 @@ if(!empty($_POST['mail']))
            Accueil
           </a>
           <a href="#" class="para">
-            Me rejoindre sur les réseau ! 
+            Me rejoindre sur les réseaux ! 
           </a>
           <a href="mentions.html" class="para">
             Mentions légales
@@ -76,9 +76,11 @@ if(!empty($_POST['mail']))
             <a href="https://github.com/enolatutellier/enolatutellier">
               <img src="img/logo/github.png" alt="Logo snapchat" class="footer-logo">
             </a>
+
              <a href="#">
                <img src="img/logo/instagram.png" alt="Logo instagram" class="footer-logo">
               </a>
+
               <a href="#">
                 <img src="img/logo/linkedin.png" alt="Logo linkedin" class="footer-logo">
               </a>

@@ -25,13 +25,13 @@
       <div class="menu">
           <ul>
               <li>
-                <a href="#">
+                <a href="index.php">
                   Accueil
                 </a>
               </li>
 
               <li>
-                <a href="#">
+                <a href=".section2">
                   Projets
                 </a>
               </li>
@@ -49,7 +49,7 @@
               </li>
 
               <li>
-                <a href="connexion.php">
+                <a href="log.php">
                   Connexion Admin
                 </a>
               </li>
