@@ -1,10 +1,20 @@
+<?php
+require_once("connexion_bdd.php");
+
+session_start();
+
+$query = $db->prepare("SELECT * from projet"); //préparation de la requête
+$query->execute(); //execution de la requête
+$articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des informations de la requête
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  rel ="stylesheet" href ="index.css"/>
+    <link  rel ="stylesheet" href ="css/index.css"/>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
     </style>
@@ -17,13 +27,15 @@
 </head>
 
 <body>
-  <header class="header"> <!-- A deplacer dans header.php -->
+  <header class="header"> 
 
     <!--The trick is create a checkbox with a label, add display:none property to checkbox and modify styles with the pseudoclass :checked-->
       <input type="checkbox" name="Menu" id="menu-button-check">
       <label for="menu-button-check">≡</label>
       <div class="menu">
-          <ul>
+          
+            <?php else : ?> <!-- Si la session est différente d'admin alors afficher ce header -->
+              <ul>
               <li>
                 <a href="index.php">
                   Accueil
@@ -31,7 +43,7 @@
               </li>
 
               <li>
-                <a href=".section2">
+                <a href="#section1">
                   Projets
                 </a>
               </li>
@@ -49,12 +61,14 @@
               </li>
 
               <li>
-                <a href="log.php">
-                  Connexion Admin
+                <a href="../connexion_admin.php">
+                  Connexion
                 </a>
               </li>
+
               
-          </ul>
+            </ul>
+            <?php endif; ?>
       </div>
   </header>
 
@@ -64,9 +78,30 @@
 <!------------------- Première SECTION -------------------->
       <section class="section1">
  <img src="img/japonais.png" alt="lettre japonaise" id="japonais">
-
         
         <div class="container">
+
+          <!--le foreach parcourt les données récuperées dans $articles, un article = $article-->
+          <?php foreach ($articles as $article): ?>
+            <div class="card">
+              <div class="imgBx">
+              <img src="img/jadoo.PNG" alt="p1" class="projet jadoo"> <!--Récuperer l'image de l'article -->
+              </div>
+              <div class="contentBx">
+                <div class="content">
+                  <h2><?= $article["nom"] ?></h2>
+                  <p><?= $article["description"] ?></p>
+                  <a href=<?= $article["lien"]?> target="_blank"> Mon GitHub </a>
+                  <?php if(isset($_SESSION['admin'])): ?> <!--Si la session est admin alors afficher le bouton -->
+                   <img src="../img/<?= $article["image"] ?>">
+                    <a href="backoffice/modif_projet.php">Modifier le projet</a>
+                    <p><?= $article["etat"] ?></p>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+
   <div class="card">
     <div class="imgBx">
     <img src="img/jadoo.PNG" alt="p1" class="projet jadoo">

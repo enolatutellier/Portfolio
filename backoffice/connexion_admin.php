@@ -1,24 +1,3 @@
-<?php //page de connexion administrateur 
-session_start();
-if (isset($_POST['Connexion'])){
-    if(!empty($_POST['mail']) AND !empty($_POST['mdp'])){
-        $mail_par_defaut = "enola.tutellier@hotmail.com";
-        $mdp_par_defaut = "root1234";
-
-        $mail_saisi = htmlspecialchars($_POST['mail']);
-        $mdp_saisi = htmlspecialchars($_POST['mdp']);
-
-        if($mail_saisi == $mail_par_defaut AND $mdp_saisi == $mdp_par_defaut){
-            $_SESSION['mdp'] = $mdp_saisi;
-            header('Location: index.php');            
-        } else{
-            echo" mail ou mot de passe incorrect"; 
-        }
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,20 +12,20 @@ if (isset($_POST['Connexion'])){
     <title>Connexion Admin</title>
 </head>
     <body>
-    <h1> Formulaire de Connexion </h1>
+    <h1> Formulaire de Connexion</h1>
 
     <!-- ajouter une fleche/ retour au site --> 
 <div id="login">
 
-    <form name='form-login'>
+    <form name='form-login' method="POST" action="validate_admin.php" >
         <span class="fontawesome-user">
         </span>
-        <input type="text" id="user" placeholder="user"  pattern="*{1.}[@][a-zA-Z]{2,}\.[a-zA-Z]{2,}" min="7" max="30">
+        <input type="text" id="admin" placeholder="user" name="admin"  min="7" max="30">
 
         <span class="fontawesome-lock"></span>
-        <input type="password" id="pass" placeholder="pass">
+        <input type="password" id="pass" placeholder="pass" name="mdp">
 
-        <input type="submit" value="Connexion">
+        <input type="submit" value="Connexion" name="Connexion">
     </form>
 </div>
 

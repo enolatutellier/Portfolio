@@ -1,0 +1,20 @@
+<?php // cette page servira a supprimer les id de la bdd // elle n'est pas visible 
+if(isset($_GET["id"]) && !empty($_GET["id"])){
+    //on se reconnecte a la bdd
+    require_once("connexion_bdd.php"); //page de connexion afin de pas re-taper la connexion
+   // strip tagg est une fnoction
+    $id = strip_tags($_GET["id"]); } //on stock id de facon a proteger des injections de balise
+    try{
+
+    $requete = "DELETE FROM projet WHERE id=:id";
+    $requete = $db->prepare($requete);
+    $requete->bindValue(":id",$id,PDO::PARAM_INT); //pour preciser que ces un nombres entier
+   
+    $requete->execute();
+    $projet = $requete->fetch(PDO::FETCH_ASSOC);
+    header("Location:backoffice.php"); 
+
+}
+catch(PDOException $e){
+    echo "Erreur" . $e->getMessage();
+}?>    

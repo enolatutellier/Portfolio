@@ -1,8 +1,8 @@
-<?php // cette page affichera la description et le nom des articles 
+<?php // cette page afficher le backoffice pour ajouter, supprimier, modifier , choisir l'archivage ou non
 
-require_once("connexion.php");//appeler un fichier php, en loccurence la connexion
+require_once("connexion_bdd.php");//appeler un fichier php, en loccurence la connexion
 
-$requete = "SELECT * FROM portfolio"; //on selection tout dans la base de donnee avec le selecteur *
+$requete = "SELECT * FROM projet"; //on selection tout dans la base de donnee avec le selecteur *
 $envoi=$db->prepare($requete); // on prepare la base de donnée pour pouvoir lexecuter par la suite
 $envoi->execute(); //on declanche tout ce qu'on a stocker dans les variables
 
@@ -26,7 +26,8 @@ var_dump($resultat);
 </head>
 
 <body>
- <h1>Cour sur le php</h1>
+
+ <h1>Backoffice</h1>
 
  <p>
      Cette page montre le tableau, elle montre aussi l'ajout d'un nouvel article/description..<br>
@@ -63,9 +64,9 @@ var_dump($resultat);
         <thead>
             <th>Nom</th>
             <th>Description</th>
-            <th>ID</th>
-            <th>Suppression</th>
-            <th>Modification</th>
+            <th>Lien</th>
+            <th>Image</th>
+            <th>Etat</th> <!-- Visible ou non--> 
         </thead>
         <tbody>
             <!-- Tableau --> 
@@ -83,7 +84,15 @@ var_dump($resultat);
                     </td> <!-- la balise veut dire php echo pour fair apparaitre un resultat -->
 
                     <td>
-                        <?= $article["id"] ?>
+                        <?= $article["lien"] ?>
+                    </td>
+
+                    <td>
+                    <?= $article["image"] ?>
+                    </td>
+
+                    <td>
+                    <?= $article["etat"] ?>
                     </td>
 
                     <td> <!-- Cela permettra a l'administrateur du site de pouvoir supprimer des articles--> 
@@ -91,7 +100,7 @@ var_dump($resultat);
                     </td> 
 
                     <td> <!-- Cela permettra a l'administrateur du site de pouvoir modifier des articles--> 
-                        <a href="modification.php?id=<?= $article["id"] ?>"> Modifier </a>
+                        <a href="modif_projet.php?id=<?= $article["id"] ?>"> Modifier </a>
                     </td> 
 
                     
@@ -107,15 +116,23 @@ if ($_POST){
     //si les champ du formulaire sont bien rempli 
     if(isset($_POST["nom"]) && !empty($_POST["nom"])
         && isset($_POST["description"]) && !empty($_POST["description"])
+        && isset($_POST["lien"]) && !empty ($_POST["lien"])
+        && isset($_POST["image"]) && !empty ($_POST["image"])
+        && isset($_POST["etat"]) && !empty ($_POST["etat"])
     ){
         $nom = strip_tags($_POST["nom"]);  
         $description =strip_tags($_POST["description"]);
-        // insere les donnee
-        $requete = "INSERT INTO exemple (nom,description)VALUES(:nom,:description)";
+        $lien =strip_tags($_POST["lien"]);
+        $image =strip_tags($_POST["image"]);
+        $etat =strip_tags($_POST["etat"]);
+        $requete = "INSERT INTO projet (nom,description,lien,image,etat)VALUES(:nom,:description,:lien,:image,:etat)";
         //securiser les données
         $envoi=$db->prepare($requete);
         $envoi->bindValue(":nom",$nom);
         $envoi->bindValue(":description",$description);
+        $envoi->bindValue(":lien",$lien);
+        $envoi->bindValue(":image",$image);
+        $envoi->bindValue(":etat",$etat);
 
         $envoi->execute();
     };
@@ -124,7 +141,7 @@ if ($_POST){
 ?>
 
 <form method="POST">
-        <label for="Nom"><br><br>
+<label for="Nom"><br><br>
             Nom         <br><br>
         </label>
         <input type="text" name="nom" id="nom" required>
@@ -134,6 +151,21 @@ if ($_POST){
         </label>
         <input type="text" name="description" id="description" required>
                         <br><br>
+        <label for="Lien">
+            Lien du projet <br><br>
+        </label>
+        <input type="text" name="lien" id="lien" required> 
+                <br><br>
+        <label for="image">
+            Image
+        </label><br><br>
+        <input type="text" name="image" id="image" required> 
+                        <br><br>
+<label for="etat">Etat</label><br><br>
+
+<input type="radio" name="etat" id="etat" value="visible"> <label>visible </label>
+<input type="radio" name="etat" id="etat" value="invisible"> <label> invisible </label>
+<br><br>
         <button type="submit">
             Envoie
         </button>

@@ -9,7 +9,7 @@
 }
 
 body{
-  background:url(img/3.jpg);   /*linear-gradient(10deg, #211f1ffb 10%,#5c1717 20%, #0b0202 100%);*/
+  background:url(../img/3.jpg);   /*linear-gradient(10deg, #211f1ffb 10%,#5c1717 20%, #0b0202 100%);*/ /* le ../ sert à sortir du dossier css */
    /* overflow-x: hidden;*/ 
     min-height: 100vh;
     width:100%;
