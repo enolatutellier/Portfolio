@@ -28,7 +28,7 @@
         <input type="submit" value="Connexion" name="Connexion">
     </form>
 </div>
-
+ <!-- //password_hash('mdp' , PASSWORD_ARGON2I);  sert à génerer un nouveaux mot de passe scuriser  a entourer de la balise php < ? > --> 
     <footer>
         <div class="paragraphe"> 
           <a href="index.php" class="para">
@@ -52,23 +52,21 @@
 
           <div class="logos">
 
-            <a href="https://github.com/enolatutellier/enolatutellier">
-              <img src="img/logo/github.png" alt="Logo snapchat" class="footer-logo">
-            </a>
-
-             <a href="#">
-               <img src="img/logo/instagram.png" alt="Logo instagram" class="footer-logo">
+              <a href="https://github.com/enolatutellier/enolatutellier">
+                <img src="img/logo/github.png" alt="Logo GitHub" class="footer-logo">
               </a>
-
               <a href="#">
-                <img src="img/logo/linkedin.png" alt="Logo linkedin" class="footer-logo">
-              </a>
+                <img src="img/logo/instagram.png" alt="Logo instagram" class="footer-logo">
+                </a>
+                <a href="#">
+                  <img src="img/logo/linkedin.png" alt="Logo linkedin" class="footer-logo">
+                </a>
 
-              <a href="#">
-                <img src="img/logo/twitter.png" alt="Logo linkedin" class="footer-logo">
-              </a>
+                <a href="#">
+                  <img src="img/logo/twitter.png" alt="Logo linkedin" class="footer-logo">
+                </a>
 
-          </div>
+</div>
       </div>
     </footer>
     </body>

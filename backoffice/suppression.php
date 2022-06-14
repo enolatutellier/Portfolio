@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if(!empty($_SESSION['login'])){ // si la session est bien ouverte, du coup sa affiche cet page-ci 
+
+ ?>
+
 <?php // cette page servira a supprimer les id de la bdd // elle n'est pas visible 
 if(isset($_GET["id"]) && !empty($_GET["id"])){
     //on se reconnecte a la bdd
@@ -18,3 +25,11 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
 catch(PDOException $e){
     echo "Erreur" . $e->getMessage();
 }?>    
+
+
+<?php 
+} 
+else{
+    echo"interdit"; // protege la page
+}
+?> 

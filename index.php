@@ -33,8 +33,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
       <input type="checkbox" name="Menu" id="menu-button-check">
       <label for="menu-button-check">≡</label>
       <div class="menu">
-          
-            <?php else : ?> <!-- Si la session est différente d'admin alors afficher ce header -->
+
               <ul>
               <li>
                 <a href="index.php">
@@ -61,14 +60,13 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
               </li>
 
               <li>
-                <a href="../connexion_admin.php">
+                <a href="backoffice/connexion_admin.php">
                   Connexion
                 </a>
               </li>
 
               
             </ul>
-            <?php endif; ?>
       </div>
   </header>
 
@@ -85,7 +83,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
           <?php foreach ($articles as $article): ?>
             <div class="card">
               <div class="imgBx">
-              <img src="img/jadoo.PNG" alt="p1" class="projet jadoo"> <!--Récuperer l'image de l'article -->
+              <img src="img/<?= $article["image"] ?>"> <!--Récuperer l'image de l'article -->
               </div>
               <div class="contentBx">
                 <div class="content">
@@ -93,7 +91,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
                   <p><?= $article["description"] ?></p>
                   <a href=<?= $article["lien"]?> target="_blank"> Mon GitHub </a>
                   <?php if(isset($_SESSION['admin'])): ?> <!--Si la session est admin alors afficher le bouton -->
-                   <img src="../img/<?= $article["image"] ?>">
+                   
                     <a href="backoffice/modif_projet.php">Modifier le projet</a>
                     <p><?= $article["etat"] ?></p>
                   <?php endif; ?>
@@ -102,6 +100,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
             </div>
           <?php endforeach; ?>
 
+ <!-- 
   <div class="card">
     <div class="imgBx">
     <img src="img/jadoo.PNG" alt="p1" class="projet jadoo">
@@ -147,7 +146,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
           <a href="https://github.com/sgonzalez58"> Sergio </a>
       </div>
     </div>
-  </div>
+  </div> 
 
   <br>
 
@@ -165,7 +164,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
   </div>
 </div>
 
-
+--> 
       </section>
 
 <!-------------------- Deuxième SECTION --------------------->

@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if(!empty($_SESSION['login'])){ // si la session est bien ouverte, du coup sa affiche cet page-ci 
+
+ ?>
+
 <?php // cette page afficher le backoffice pour ajouter, supprimier, modifier , choisir l'archivage ou non
 
 require_once("connexion_bdd.php");//appeler un fichier php, en loccurence la connexion
@@ -15,50 +22,43 @@ var_dump($resultat);
 ?> 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel ="stylesheet" href ="backoffice.css"/>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+    </style>
     <title>
-        Cour PHP - Modification, Ajout, Suppression 
+        Backoffice
     </title>
 </head>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="../index.php"> Retour au site </a>
+            </li>
 
+            <li>
+                <a href="backoffice.php"> Modification Projet </a>
+            </li>
+
+            <li>
+                <a href="messagerie.php"> Message reçu </a>
+            </li> 
+
+            <li>
+                <a href="deconnexion.php"> Deconnexion </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <body>
 
  <h1>Backoffice</h1>
-
- <p>
-     Cette page montre le tableau, elle montre aussi l'ajout d'un nouvel article/description..<br>
-     elle contient egalement le formulaire
- </p>
- 
-    <style> /* css */
-        body{
-            background:grey;
-            color:white;
-        }
-
-        h1{
-            text-align: center;
-        }
-
-        thead, td, th{
-            background-color: black;
-            padding:15px;
-        }
-        form {
-            border: black 1px solid;
-            width:fit-content;
-            margin:5px;
-            position:relative;
-        }
-        label{
-            justify-content: center;
-        }
-
-    </style>
 
     <table>
         <thead>
@@ -139,7 +139,7 @@ if ($_POST){
 }
 
 ?>
-
+<h2> Ajout d'un projet : </h2>
 <form method="POST">
 <label for="Nom"><br><br>
             Nom         <br><br>
@@ -158,9 +158,12 @@ if ($_POST){
                 <br><br>
         <label for="image">
             Image
-        </label><br><br>
+        </label>
+        <br><br>
         <input type="text" name="image" id="image" required> 
-                        <br><br>
+         <br><br>
+
+<!-- a celui qui lira ce code et qui dira que les br ne sont pas une bonne pratique:: JE SAIS -->
 <label for="etat">Etat</label><br><br>
 
 <input type="radio" name="etat" id="etat" value="visible"> <label>visible </label>
@@ -173,3 +176,10 @@ if ($_POST){
     </form>
 </body>
 </html>
+
+<?php 
+} 
+else{
+    echo"interdit"; // protege la page
+}
+?> 

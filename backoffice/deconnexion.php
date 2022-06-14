@@ -1,6 +1,8 @@
 <?php
 session_start();
-$_SESSION = array();
+$_SESSION = NULL;
 session_destroy();
-header('Location:index.php');
+var_dump($_SESSION);
+    header('Location:../index.php');
+    
 ?> 

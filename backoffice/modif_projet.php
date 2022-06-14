@@ -1,3 +1,12 @@
+
+<?php 
+session_start();
+
+if(!empty($_SESSION['login'])){ // si la session est bien ouverte, du coup sa affiche cet page-ci 
+
+ ?>
+
+
 <?php // permettra de modifier les article/projet/prestation...
 
 require_once("connexion_bdd.php");
@@ -76,6 +85,27 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
         Modification
     </title>
 </head>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="../index.php"> Retour au site </a>
+            </li>
+
+            <li>
+                <a href="backoffice.php"> Modification Projet </a>
+            </li>
+
+            <li>
+                <a href="messagerie.php"> Message reçu </a>
+            </li> 
+
+            <li>
+                <a href="deconnexion.php"> Deconnexion </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <body>
     
 <h1> Modifier un projet </h1>
@@ -112,3 +142,10 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
 </form>
 </body>
 </html>
+
+<?php 
+} 
+else{
+    echo"interdit"; // protege la page
+}
+?> 
