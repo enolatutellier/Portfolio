@@ -31,10 +31,10 @@
  <!-- //password_hash('mdp' , PASSWORD_ARGON2I);  sert à génerer un nouveaux mot de passe scuriser  a entourer de la balise php < ? > --> 
     <footer>
         <div class="paragraphe"> 
-          <a href="index.php" class="para">
+          <a href="../index.php" class="para">
            Accueil
           </a>
-          <a href="#" class="para">
+          <a href="../index.php" class="para">
             Me rejoindre sur les réseaux ! 
           </a>
           <a href="mentions.html" class="para">
@@ -53,17 +53,17 @@
           <div class="logos">
 
               <a href="https://github.com/enolatutellier/enolatutellier">
-                <img src="img/logo/github.png" alt="Logo GitHub" class="footer-logo">
+                <img src="../img/logo/github.png" alt="Logo GitHub" class="footer-logo">
               </a>
               <a href="#">
-                <img src="img/logo/instagram.png" alt="Logo instagram" class="footer-logo">
+                <img src="../img/logo/instagram.png" alt="Logo instagram" class="footer-logo">
                 </a>
                 <a href="#">
-                  <img src="img/logo/linkedin.png" alt="Logo linkedin" class="footer-logo">
+                  <img src="../img/logo/linkedin.png" alt="Logo linkedin" class="footer-logo">
                 </a>
 
                 <a href="#">
-                  <img src="img/logo/twitter.png" alt="Logo linkedin" class="footer-logo">
+                  <img src="../img/logo/twitter.png" alt="Logo linkedin" class="footer-logo">
                 </a>
 
 </div>

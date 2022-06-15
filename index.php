@@ -34,43 +34,28 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
       <label for="menu-button-check">≡</label>
       <div class="menu">
 
-              <ul>
-              <li>
-                <a href="index.php">
-                  Accueil
-                </a>
-              </li>
+            <ul>
+              <li><a href="index.php">Accueil</a></li>
 
-              <li>
-                <a href="#section1">
-                  Projets
-                </a>
-              </li>
-
-              <li>
-                <a href="#">
-                  Parcours
-                </a>
-              </li>
-
-              <li>
-                <a href="#">
-                  Contactez-moi
-                </a>
-              </li>
-
-              <li>
-                <a href="backoffice/connexion_admin.php">
-                  Connexion
-                </a>
-              </li>
-
-              
+              <li><a href="#section1">Projets</a></li>
+        
+              <li> <a href="#">Parcours</a></li>
+    
+              <li><a href="#">Contactez-moi </a> </li>
+                
+              <li><a href="backoffice/connexion_admin.php">Connexion</a> </li>
+                              
             </ul>
       </div>
   </header>
 
     <main>
+<!-- SECTION 0-->
+    <section class="section0">
+      <div>
+
+      </div>
+    </section>
 
       
 <!------------------- Première SECTION -------------------->
