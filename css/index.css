@@ -193,6 +193,7 @@ label[for=menu-button-check]:nth-of-type(1) {
 .section1{ 
   position:relative;
   top:19vh;
+  
 }
 
 .container {
@@ -204,7 +205,7 @@ label[for=menu-button-check]:nth-of-type(1) {
   flex-wrap: wrap;
   background-color: #8484847c;
   z-index: 0;
-  margin-left:16vh;
+  margin:auto;
   border-radius: 10px 10px 10px 10px;
 
 }
@@ -446,6 +447,17 @@ label[for=menu-button-check]:nth-of-type(1) {
 
  /************************ Section 3 **************************/
 
+h3{
+  font-size: 2rem;
+  color:white;
+  text-decoration:overline;
+  display: inline-block;
+  margin:auto;
+  width:100%;
+  text-align: center;
+padding-top:6vw;
+}
+
  .section3{
    justify-content: center;
    width: 100%;
@@ -499,8 +511,8 @@ label[for=menu-button-check]:nth-of-type(1) {
   background: #E9E2D0;
   box-shadow: -20px 0 35px -25px black, 20px 0 35px -25px black;
   z-index: 5;
-  left:45vh;
   border-radius: 5px 5px 5px 5px;
+  margin: auto;
 }
 
 #card img {
@@ -534,7 +546,7 @@ label[for=menu-button-check]:nth-of-type(1) {
 /********************* Section 4 **********************/
 
 .section4{
-  margin: 10vw 0 10vw 0;
+  margin: 2vw 0 10vw 0;
 }
 
 

@@ -75,6 +75,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
       
 <!------------------- Première SECTION -------------------->
       <section class="section1">
+        <h1>Projet</h1>
  <img src="img/japonais.png" alt="lettre japonaise" id="japonais">
         
         <div class="container">
@@ -89,7 +90,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
                 <div class="content">
                   <h2><?= $article["nom"] ?></h2>
                   <p><?= $article["description"] ?></p>
-                  <a href=<?= $article["lien"]?> target="_blank"> Mon GitHub </a>
+                  <a href=<?= $article["lien"]?> target="_blank"> Lien Projet / Binôme </a>
                   <?php if(isset($_SESSION['admin'])): ?> <!--Si la session est admin alors afficher le bouton -->
                    
                     <a href="backoffice/modif_projet.php">Modifier le projet</a>
@@ -169,6 +170,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
 
 <!-------------------- Deuxième SECTION --------------------->
 <section id="slideshow">
+                    <h3>Mes compétences </h3>
           <div class="entire-content">
             <div class="content-carrousel">
               

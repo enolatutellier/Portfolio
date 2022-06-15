@@ -24,6 +24,7 @@ $envoi=$db->prepare($requete); // on prepare la base de donnée pour pouvoir lex
 $envoi->execute(); //on declanche tout ce qu'on a stocker dans les variables
 
 $resultat=$envoi->fetchAll(PDO::FETCH_ASSOC);
+
 }
 
 catch(PDOException $e){ 
@@ -122,7 +123,7 @@ catch(PDOException $e){
                     </td>
 
                     <td> <!-- Cela permettra a l'administrateur du site de pouvoir supprimer des articles--> 
-                        <a href="suppression.php?id=<?= $article["id"] ?>"> Supprimer</a>
+                        <a href="suppression_messagerie.php?id=<?= $article["id"] ?>"> Supprimer</a>
                     </td> 
                 </tr> 
 

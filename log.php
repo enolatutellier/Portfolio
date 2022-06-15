@@ -1,4 +1,4 @@
-<?php //page de connexion administrateur 
+<?php //page de connexion administrateur elle est lié avec la page "connexion_admin"
 session_start();
 if (isset($_POST['Connexion'])){
     if(!empty($_POST['mail']) && !empty($_POST['mdp'])){

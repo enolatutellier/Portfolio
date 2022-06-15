@@ -13,13 +13,13 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
     $id = strip_tags($_GET["id"]); } //on stock id de facon a proteger des injections de balise
     try{
 
-    $requete = "DELETE FROM projet WHERE id=:id";
+    $requete = "DELETE FROM formulaire WHERE id=:id";
     $requete = $db->prepare($requete);
    // $requete->bindValue(":id",$id,PDO::PARAM_INT); //pour preciser que ces un nombres entier
    
     $requete->execute([":id"=> $_GET["id"]]);
     $projet = $requete->fetch(PDO::FETCH_ASSOC);
-    header("Location:backoffice.php"); 
+    header ('Location:messagerie.php');
 
 }
 catch(PDOException $e){

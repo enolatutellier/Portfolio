@@ -38,21 +38,15 @@ var_dump($resultat);
 <header>
     <nav>
         <ul>
-            <li>
-                <a href="../index.php"> Retour au site </a>
-            </li>
 
-            <li>
-                <a href="backoffice.php"> Modification Projet </a>
-            </li>
+            <li><a href="../index.php"> Retour au site </a></li>
 
-            <li>
-                <a href="messagerie.php"> Message reçu </a>
-            </li> 
+            <li><a href="backoffice.php"> Modification Projet </a></li>
 
-            <li>
-                <a href="deconnexion.php"> Deconnexion </a>
-            </li>
+            <li><a href="messagerie.php"> Message reçu </a></li> 
+
+            <li><a href="deconnexion.php"> Deconnexion </a></li>
+
         </ul>
     </nav>
 </header>
@@ -141,6 +135,7 @@ if ($_POST){
 ?>
 <h2> Ajout d'un projet : </h2>
 <form method="POST">
+    
 <label for="Nom"><br><br>
             Nom         <br><br>
         </label>
@@ -151,15 +146,13 @@ if ($_POST){
         </label>
         <input type="text" name="description" id="description" required>
                         <br><br>
-        <label for="Lien">
-            Lien du projet <br><br>
-        </label>
+        <label for="Lien">Lien du projet <br><br></label>
         <input type="text" name="lien" id="lien" required> 
                 <br><br>
-        <label for="image">
-            Image
-        </label>
+        <label for="image">Image</label>
+
         <br><br>
+
         <input type="text" name="image" id="image" required> 
          <br><br>
 
