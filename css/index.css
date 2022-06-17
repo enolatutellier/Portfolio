@@ -735,7 +735,7 @@ footer{
   .header{
     padding:47px;
     height:4vh;
-   width:10vh%;
+   width:10vh;
   }
 
   h1{
@@ -765,16 +765,18 @@ footer{
   #card{
     width: 331px;
     height: 354px;
+    margin-left:5vh;
   }
 
-  h2{
-
-  }
 
   #japonais{
     float: none;
     margin-left: 426px;
     margin-top: 2vh;
+  }
+
+  .gradient{
+    width:59vh;
   }
 
   .content-carrousel figure:nth-child(1) {

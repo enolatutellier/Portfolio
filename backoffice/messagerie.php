@@ -34,7 +34,7 @@ catch(PDOException $e){
 ?> 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,6 +43,7 @@ catch(PDOException $e){
         Messagerie
     </title>
 </head>
+
 <header>
     <nav>
         <ul>
@@ -69,21 +70,49 @@ catch(PDOException $e){
 
  <h1>Messagerie</h1>
 
- <a href="deconnexion.php"> Deconnexion </a>
- 
     <style> /* css */
-        body{
+        body, html{
             background:grey;
             color:white;
+            font-family: 'Cinzel', sans-serif;
         }
 
+        nav li{
+  display:inline;
+  list-style: none;
+}
+
+nav{
+    text-align: center;
+} 
+
+nav a{
+    display: inline-block;
+    margin:0 50px;
+    color:black;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
         h1{
             text-align: center;
+            color:black;
+            font-size: 1.8rem;
+            font-family: 'Cinzel' , sans-serif;
+            margin:52px 0 67px 0;
+
+        }
+
+        table{
+            margin:0 0 0 300px;
         }
 
         thead, td, th{
             background-color: black;
             padding:15px;
+        }
+
+        td{
+          padding:50px;  
         }
         form {
             border: black 1px solid;
@@ -94,6 +123,7 @@ catch(PDOException $e){
         label{
             justify-content: center;
         }
+
 
     </style>
 
