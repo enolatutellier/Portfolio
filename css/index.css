@@ -11,7 +11,7 @@
 body{
   background:url(../img/test.jpg);
   background:cover;/*linear-gradient(10deg, #211f1ffb 10%,#5c1717 20%, #0b0202 100%);*/ /* le ../ sert à sortir du dossier css */
-   /* overflow-x: hidden;*/ 
+  overflow-x: hidden;
     min-height: 100vh;
     width:100%;
 }
@@ -702,7 +702,7 @@ footer{
 }
 
 .para{
-  margin:15px 0 10px 0;
+  margin:15px 3px 10px 0;
   text-decoration: none;
   color:whitesmoke;
 }
@@ -735,7 +735,7 @@ footer{
   .header{
     padding:47px;
     height:4vh;
-   width:10vh;
+   width:40vh;
   }
 
   h1{

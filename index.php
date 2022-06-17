@@ -197,7 +197,7 @@ $articles = $query->fetchAll(PDO::FETCH_ASSOC); //récupération des information
     <p>En formation depuis 07/03/2022 à OnlineForma Pro</p>
     <p>Passionnée de nouvelle technologie quelquel soit le support
       , je souhaitais me convertir vers un metier qui me ressemblais plus .</p>
-    <span class="left bottom">tel: 06 48 59</span>
+    <span class="left bottom">mail: enola.tutellier@hotmail.com </span>
     <span class="right bottom">adress:Nevers 58 000</span>
 </div> 
 </section>
